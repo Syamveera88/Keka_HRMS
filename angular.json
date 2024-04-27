@@ -101,8 +101,28 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "new-hrms:build:production",
+              "serveTarget": "new-hrms:serve:production"
+            },
+            "development": {
+              "buildTarget": "new-hrms:build:development",
+              "serveTarget": "new-hrms:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "19dfbed2-8bb7-429b-b2a5-6d785ca5e599"
   }
 }

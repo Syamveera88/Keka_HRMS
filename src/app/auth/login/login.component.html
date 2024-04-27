@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row mt-5" style="justify-content: center; align-items: center;">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header"><h4>Login</h4></div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="username">Username/Email</label>
+                            <input type="text" id="username" formControlName="username" class="form-control">
+                            <div
+                                *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+                                <small class="text-danger" *ngIf="loginForm.get('username')?.errors?.['required']">
+                                    Username or Email is required.
+                                </small>
+                                <small class="text-danger" *ngIf="loginForm.get('username')?.errors?.['usernameOrEmail']">
+                                    Please enter a valid username or email.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" formControlName="password" class="form-control">
+                            <div
+                                *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                                <small *ngIf="loginForm.get('password')?.errors?.['required']" class="text-danger">Password is required.</small>
+                                <small *ngIf="loginForm.get('password')?.errors?.['pattern']" class="text-danger">
+                                    Password must be 6-16 characters long and contain at least one
+                                    alphabet, one number, and one special character.</small>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary">Login</button>
+                            <a routerLink="/register" class="ml-3">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

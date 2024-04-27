@@ -1,0 +1,51 @@
+{
+  "signup": [
+    {
+      "username": "Syam",
+      "email": "john@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "3e18",
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "c5b9",
+      "username": "Syam",
+      "email": "syamveera@gmail.com",
+      "password": "sYAM@12345",
+      "confirmPassword": "sYAM@12345"
+    },
+    {
+      "id": "5c9a",
+      "username": "Syam",
+      "email": "syamveera@gmail.com",
+      "password": "Syam@1234",
+      "confirmPassword": "Syam@12345"
+    },
+    {
+      "id": "a376",
+      "username": "Syam",
+      "email": "syamveer@gmail.com",
+      "password": "Syam@12345",
+      "confirmPassword": "Syam@12345"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

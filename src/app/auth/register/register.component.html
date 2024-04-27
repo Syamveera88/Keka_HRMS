@@ -1,0 +1,55 @@
+<div class="conatiner">
+    <div class="row mt-5" style="justify-content: center; align-items: center;">
+        <div class="col-md-6">
+            <form [formGroup]="signupForm" (ngSubmit)="signup()">
+                <div class="card">
+                    <!-- <div class="card-header"> <a routerLink="/login"><i class='fas fa-angle-left' style='font-size:48px'></i></a><span>Signup</span></div> -->
+                    <div class="card-header">
+                        <a routerLink="/login" class="icon-link"><i class='fas fa-angle-left' style='font-size:36px;'></i></a>
+                        <span class="header-title">Signup</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" formControlName="username" class="form-control">
+                            <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.dirty||signupForm.get('username')?.touched ">
+                                <small class="text-danger" *ngIf="signupForm.get('username')?.errors?.['required']">Username is required</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" formControlName="email" class="form-control">
+                            <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.dirty||signupForm.get('email')?.touched ">
+                                <small class="text-danger" *ngIf="signupForm.get('email')?.errors?.['required']">Email is required</small>
+                                <small class="text-danger" *ngIf="signupForm.get('email')?.errors?.['email']">Please enter a valid email address.</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" formControlName="password" class="form-control">
+                            <div
+                                *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)">
+                                <small *ngIf="signupForm.get('password')?.errors?.['required']" class="text-danger">Password is required.</small>
+                                <small *ngIf="signupForm.get('password')?.errors?.['pattern']" class="text-danger">
+                                    Password must be 6-16 characters long and contain at least one
+                                    alphabet, one number, and one special character.</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control">
+                            <div
+                                *ngIf="signupForm.get('confirmPassword')?.invalid && (signupForm.get('confirmPassword')?.dirty || signupForm.get('confirmPassword')?.touched)">
+                                <small *ngIf="signupForm.get('confirmPassword')?.errors?.['required']" class="text-danger">Password is required.</small>
+                                <small *ngIf="signupForm.get('confirmPassword')?.errors?.['pattern']" class="text-danger">
+                                    Password must be 6-16 characters long and include at least one letter, one number, and one special character.
+                                </small>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" [disabled]="signupForm.invalid">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
